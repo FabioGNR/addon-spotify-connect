@@ -1,5 +1,5 @@
 ---
-name: Spotify Connect
+name: Spotify Connect (dev branch)
 version: dev
 slug: spotify
 description: Play Spotify music on your Home Assistant device
@@ -19,5 +19,3 @@ schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   name: str
   bitrate: list(96|160|320)
-  username: str?
-  password: password?

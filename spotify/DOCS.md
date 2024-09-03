@@ -35,8 +35,6 @@ Example add-on configuration:
 log_level: info
 name: HomeAssistant
 bitrate: 320
-username: frenck@example.com
-password: MySpotifyPassword
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -73,20 +71,6 @@ The bitrate Spotify should use. The higher, the better the sound quality,
 however, the add-on consumes more data.
 
 Valid values: `96`, `160` (default) or `320`.
-
-### Option: `username`
-
-**IMPORTANT**: _This requires a Spotify Premium account!_
-
-The username you use to login to your Spotify Premium account. Setting
-this will bind the add-on to your account exclusively.
-
-This can be helpful when experiencing discovery issues on your network or
-to disallow guests on your network to use the add-on.
-
-### Option: `password`
-
-The password you use to login to your Spotify Premium account.
 
 ## Known issues and limitations
 

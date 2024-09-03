@@ -14,12 +14,3 @@ configuration:
     description: >-
       Il bitrate che Spotify dovrebbe usare. Piú é alto, migliore é la qualitá sonora,
       tuttavia, l'add-on consumerá piú banda.
-  username:
-    name: Spotify username
-    description: >-
-      Uno username opzionale che puoi usare per accedere al tuo account Spotify Premium.
-      Puó essere utile se hai problemi con l'auto discovery.
-  password:
-    name: Spotify password
-    description: >-
-      La password per accedere al tuo account Spotify Premium.
