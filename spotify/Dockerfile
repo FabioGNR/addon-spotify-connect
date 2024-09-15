@@ -13,6 +13,9 @@ RUN \
         git=2.45.2-r0 \
         protobuf-dev=24.4-r1 \
         pulseaudio-dev=17.0-r0 \
+        cmake \
+        rust-bindgen \
+        clang-dev \
     \
     && apk add --no-cache \
         pulseaudio=17.0-r0 \
