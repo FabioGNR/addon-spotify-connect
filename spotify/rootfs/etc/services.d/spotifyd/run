@@ -16,8 +16,11 @@ options+=(--bitrate $(bashio::config 'bitrate'))
 name=$(bashio::config 'name')
 options+=(--name "${name}")
 
-# Save writes
-options+=(--disable-audio-cache)
+# Cache
+options+=(--cache "./librespot-cache")
+
+# Initial volume
+options+=(--initial-volume "70")
 
 # Are we running in debug mode?
 if bashio::debug; then
