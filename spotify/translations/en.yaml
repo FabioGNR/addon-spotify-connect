@@ -14,3 +14,11 @@ configuration:
     description: >-
       The bitrate Spotify should use. The higher, the better the sound quality,
       however, the add-on consumes more data.
+  initial_volume:
+    name: Initial volume
+    description: >-
+      The initial volume Spotify should use.
+  enable_cache:
+    name: Enable cache
+    description: >-
+      Whether or not to enable cache. Disable this on SD cards to save writes.

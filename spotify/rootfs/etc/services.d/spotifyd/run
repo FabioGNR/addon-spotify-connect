@@ -6,6 +6,8 @@
 declare -a options
 declare bitrate
 declare name
+declare initial_volume
+declare enable_cache
 
 bashio::log.info 'Starting the Spotify daemon...'
 
@@ -19,10 +21,14 @@ name=$(bashio::config 'name')
 options+=(--name "${name}")
 
 # Cache
-options+=(--cache "./librespot-cache")
+if bashio::config 'enable_cache'; then
+  options+=(--cache "./librespot-cache")
+fi
 
 # Initial volume
-options+=(--initial-volume "70")
+if bashio::config.exists 'initial_volume'; then
+  options+=(--initial-volume $(bashio::config 'initial_volume'))
+fi
 
 # Are we running in debug mode?
 if bashio::debug; then
