@@ -20,5 +20,5 @@ schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   name: str
   bitrate: list(96|160|320)
-  initial_volume: int(0, 100)?
+  initial_volume: int(0,100)?
   enable_cache: bool
