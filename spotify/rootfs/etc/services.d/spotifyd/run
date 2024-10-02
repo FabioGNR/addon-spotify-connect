@@ -20,9 +20,13 @@ fi
 name=$(bashio::config 'name')
 options+=(--name "${name}")
 
+if bashio::config.exists 'credentials_json'; then
+  echo "$(bashio::config 'credentials_json')" > /data/cache/credentials.json
+fi
+
 # Cache
 if bashio::config 'enable_cache'; then
-  options+=(--cache "./librespot-cache")
+  options+=(--cache "/data/cache")
 fi
 
 # Initial volume

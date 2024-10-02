@@ -1,10 +1,10 @@
 ---
 name: Spotify Connect (dev branch)
 version: dev
-slug: spotify
+slug: spotify-dev
 description: Play Spotify music on your Home Assistant device
-url: https://github.com/hassio-addons/addon-spotify-connect
-codenotary: codenotary@frenck.dev
+url: https://github.com/FabioGNR/addon-spotify-connect
+# codenotary: codenotary@frenck.dev
 arch:
   - aarch64
   - amd64
@@ -22,3 +22,4 @@ schema:
   bitrate: list(96|160|320)
   initial_volume: int(0,100)?
   enable_cache: bool
+  credentials_json: str?
