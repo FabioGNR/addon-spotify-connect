@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:17.1.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:17.2.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -25,7 +25,7 @@ RUN \
         --git https://github.com/librespot-org/librespot.git \
         --branch dev \
         --no-default-features \
-        --features pulseaudio-backend \
+        --features "pulseaudio-backend with-libmdns" \
         --root /usr \
         --bin librespot \
         --verbose \ 
