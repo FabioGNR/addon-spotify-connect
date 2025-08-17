@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:17.2.2
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:18.1.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -9,16 +9,16 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         build-base=0.5-r3 \
-        cargo=1.83.0-r0 \
-        git=2.47.2-r0 \
-        protobuf-dev=24.4-r4 \
-        pulseaudio-dev=17.0-r4 \
+        cargo=1.87.0-r0 \
+        git=2.49.1-r0 \
+        protobuf-dev=29.4-r0 \
+        pulseaudio-dev=17.0-r5 \
         cmake \
         rust-bindgen \
         clang-dev \
     \
     && apk add --no-cache \
-        pulseaudio=17.0-r4 \
+        pulseaudio=17.0-r5 \
     \
     && cargo install \
         --locked \
