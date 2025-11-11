@@ -25,7 +25,7 @@ RUN \
         --git https://github.com/librespot-org/librespot.git \
         --branch dev \
         --no-default-features \
-        --features "pulseaudio-backend with-libmdns" \
+        --features "pulseaudio-backend with-libmdns rustls-tls-native-roots" \
         --root /usr \
         --bin librespot \
         --verbose \ 
