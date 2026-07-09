@@ -1,26 +1,23 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:20.1.1
-# hadolint ignore=DL3006
-FROM ${BUILD_FROM}
-
+FROM ghcr.io/home-assistant/base:latest
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
-        libssl3=3.5.6-r0 \
-        libcrypto3=3.5.6-r0 \
+        libssl3=3.5.7-r0 \
+        libcrypto3=3.5.7-r0 \
     && apk add --no-cache --virtual .build-dependencies \
-        build-base=0.5-r3 \
-        cargo=1.91.1-r2 \
-        git=2.52.0-r0 \
+        build-base=0.5-r4 \
+        cargo=1.96.0-r0 \
+        git=2.54.0-r0 \
         protobuf-dev=31.1-r1 \
-        pulseaudio-dev=17.0-r5 \
-        cmake=4.1.3-r0 \
-        openssl-dev=3.5.6-r0 \
+        pulseaudio-dev=17.0-r7 \
+        cmake=4.2.3-r0 \
+        openssl-dev=3.5.7-r0 \
     \
     && apk add --no-cache \
-        pulseaudio=17.0-r5 \
+        pulseaudio=17.0-r7 \
     \
     && cargo install --force --locked bindgen-cli \
     && export PATH="$HOME/.cargo/bin:$PATH" \
@@ -41,7 +38,8 @@ RUN \
         /tmp/* \
         ~/.cargo \
         /usr/.crates.toml \
-        /usr/.crates2.json
+        /usr/.crates2.json \
+    && mkdir /spotify-cache
 
 # Copy root filesystem
 COPY rootfs /

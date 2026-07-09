@@ -20,14 +20,18 @@ fi
 name=$(bashio::config 'name')
 options+=(--name "${name}")
 
-if bashio::config.exists 'credentials_json' && bashio::config 'enable_cache'; then
-  mkdir -p /data/cache
-  echo "$(bashio::config 'credentials_json')" > /data/cache/credentials.json
+if bashio::config.exists 'credentials_json'; then
+  # clean up old cache directory
+  rm -rf /data/cache 
+  mkdir -p /data/system-cache
+  options+=(--system-cache "/data/system-cache")
+  echo "$(bashio::config 'credentials_json')" > /data/system-cache/credentials.json
 fi
 
 # Cache
 if bashio::config 'enable_cache'; then
-  options+=(--cache "/data/cache")
+  options+=(--cache "/spotify-cache")
+  options+=(--cache-size-limit "8G")
 fi
 
 # Initial volume

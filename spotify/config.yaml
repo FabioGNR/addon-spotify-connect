@@ -6,7 +6,6 @@ description: Play Spotify music on your Home Assistant device
 url: https://github.com/FabioGNR/addon-spotify-connect
 # codenotary: codenotary@frenck.dev
 arch:
-  - aarch64
   - amd64
 host_network: true
 audio: true
